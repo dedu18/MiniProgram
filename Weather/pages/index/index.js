@@ -12,6 +12,19 @@ Page({
       region: e.detail.value
     })
   },
+  getWeather: function() {
+    var that = this
+    //this不可以直接在wxapi函数内部使用
+    wx.request({
+      url: '',
+      data: {
+
+      },
+      success: function(res) {
+        
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
