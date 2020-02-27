@@ -1,0 +1,8 @@
+<view class="container">
+  <!-- 地方选择器 -->
+  <picker mode='region' bindchange="changeRegion">
+    {{region}}
+  </picker>
+  <text>20℃</text>
+  <image src="/images/spring.jpg"></image>
+</view>
