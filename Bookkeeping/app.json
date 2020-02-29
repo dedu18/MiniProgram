@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/center/center",
+    "pages/analysis/analysis"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "德度记账",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "记一笔",
+        "iconPath": "images/tabBar/zhangdan.jpg",
+        "selectedIconPath": "images/tabBar/zhangdan.jpg"
+      },
+      {
+        "pagePath": "pages/analysis/analysis",
+        "text": "分析下",
+        "iconPath": "images/tabBar/fenxi.jpg",
+        "selectedIconPath": "images/tabBar/fenxi.jpg"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "我自己",
+        "iconPath": "images/tabBar/gerenzhongxin.jpg",
+        "selectedIconPath": "images/tabBar/zhangdan.jpg"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="first">
+    <view>
+      本月支出(元)
+    </view>
+    <view>
+      <button>月</button>
+    </view>
+    <view>
+      <button>2020-02-29</button>
+    </view>
+  </view>
+  <view class="second">
+    <view>0.00</view>
+  </view>
+
+  <view class="third">
+    <view>本月收入100000.00</view>
+    <view class='line'></view>
+    <view>本月结余100000.00</view>
+  </view>
+  <view wx:if="{{datas.length>0}}">
+    <view class="forth" wx:for="{{datas}}">
+      <view class="f-first">{{item.time}} 支出：100.00 收入0.00</view>
+      <view class="f-second" wx:for="{{item.listdata}}">
+        <image src="{{item.image}}"></image>
+        <view>{{item.label}}| {{item.number}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    去记一笔吧！
+  </view>
+</view>
+<!--圆形点击框  -->
+<view class="round-click">
+  <text>记</text>
+  <!-- <image src="/images/jiyibi.jpg"></image> -->
+</view>

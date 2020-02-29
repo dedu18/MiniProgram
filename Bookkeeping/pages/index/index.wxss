@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: yellow;
+}
+
+.first {
+  display: flex;
+  flex-direction: row;
+}
+
+.third {
+  display: flex;
+  flex-direction: row;
+}
+
+.line {
+  margin: 0 auto;
+  width: 50rpx;
+  height: 2rpx;
+  background-color: #d8d8d8;
+}
+
+.forth{
+  display: flex;
+  flex-direction: column;
+}
+.f-first{
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+}
+.f-second{
+  display: flex;
+  flex-direction: row;
+  background-color: greenyellow;
+}
+
+.f-second image{
+  height: 40rpx;
+  width: 40rpx;
+  border: 2rpx;
+}
+
+/* 圆形点击 */
+
+.round-click {
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 150rpx;
+  right: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+  border: 1rpx solid;
+  background-color: #050505fb;
+}
+
+.round-click text {
+  font-size: 32rpx;
+  max-width: 80rpx;
+  color: #fff;
+  text-align: center;
+}
