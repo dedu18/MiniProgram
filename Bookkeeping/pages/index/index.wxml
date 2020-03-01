@@ -7,7 +7,11 @@
       <button>月</button>
     </view>
     <view>
-      <button>2020-02-29</button>
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          当前选择: {{date}}
+        </view>
+      </picker>
     </view>
   </view>
   <view class="second">

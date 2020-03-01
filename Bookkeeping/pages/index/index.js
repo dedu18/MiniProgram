@@ -27,7 +27,8 @@ Page({
             "image": "/images/type/yifu.jpg",
           "number": 70
         }]
-      }]
+      }],
+    date: "2020-02-02"
   },
 
   /**
@@ -84,5 +85,11 @@ Page({
    */
   onShareAppMessage: function() {
 
-  }
+  },
+
+  bindDateChange: function (e) {
+    this.setData({
+      date: e.detail.value
+    })
+  },
 })
