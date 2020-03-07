@@ -1,0 +1,23 @@
+<view class="container">
+  <view>记账类型
+    <radio-group class="radio-group" bindchange="radioChange">
+      <radio class="radio" wx:for-items="{{recordtype}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+        <text>{{item.value}}</text>
+      </radio>
+    </radio-group>
+  </view>
+  <view>
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        选择日期: {{date}}
+      </view>
+    </picker>
+  </view>
+  <view>输入金额：
+    <input class="weui-input" type="digit" placeholder="请输入数字" />
+  </view>
+  <view>备注说明<input class="weui-input" maxlength="10" placeholder="最输入" /></view>
+  <view>
+    <button type="primary" loading="{{loading}}" disabled="{{recordable}}" bindtap="addRecord">新增记账</button>
+  </view>
+</view>

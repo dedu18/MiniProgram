@@ -7,30 +7,42 @@ Page({
   data: {
     datas: [{
       time: "2020年2月29日",
+      income: 0.0.toFixed(2),
+      expense: 100.0.toFixed(2),
       listdata: [{
         "label": "餐饮",
         "image": "/images/type/chifan.jpg",
-        "number": 60
+        "number": 60.0.toFixed(2)
       }, {
         "label": "服饰",
         "image": "/images/type/yifu.jpg",
-        "number": 70
+          "number": 70.0.toFixed(2)
       }]
     }, {
-        time: "2020年2月29日",
+        time: "2020年2月28日",
+        income: 0.0.toFixed(2),
+        expense: 200.0.toFixed(2),
         listdata: [{
           "label": "餐饮",
           "image": "/images/type/chifan.jpg",
-          "number": 60
+          "number": -60.0.toFixed(2)
         }, {
           "label": "服饰",
             "image": "/images/type/yifu.jpg",
-          "number": 70
+            "number": 70.0.toFixed(2)
         }]
       }],
-    date: "2020-02-02"
+    date: "2020-02",
+    money: 8000.0.toFixed(2),
+    income: 10000.0.toFixed(2),
+    expense: 2000.0.toFixed(2)
   },
 
+  toRecord: function() {
+    wx.navigateTo({
+      url: '../record/record',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

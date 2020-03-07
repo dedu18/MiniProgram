@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/record/record",
     "pages/index/index",
     "pages/center/center",
     "pages/analysis/analysis"
@@ -30,7 +31,7 @@
         "pagePath": "pages/center/center",
         "text": "我自己",
         "iconPath": "images/tabBar/gerenzhongxin.jpg",
-        "selectedIconPath": "images/tabBar/zhangdan.jpg"
+        "selectedIconPath": "images/tabBar/gerenzhongxin.jpg"
       }
     ]
   },

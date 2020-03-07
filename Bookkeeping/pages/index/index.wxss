@@ -2,45 +2,99 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: yellow;
 }
+
+.head {
+  background-color: #242424;
+}
+
+/*头部文字与月份选择*/
 
 .first {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
 }
+
+.date_picker {
+  border: 1px solid white;
+  border-radius: 15px;
+  color: white;
+}
+
+/*中间数字*/
+
+.second {
+  margin-left: 35%;
+  font-size: 100rpx;
+  color: white;
+}
+
+/*收入与结余*/
 
 .third {
   display: flex;
   flex-direction: row;
+  margin: 10px;
+  justify-content: space-between;
+  font-size: 35rpx;
+  color: white;
 }
 
 .line {
-  margin: 0 auto;
-  width: 50rpx;
-  height: 2rpx;
-  background-color: #d8d8d8;
+  float: left;
+  width: 5rpx;
+  background: white;
 }
 
-.forth{
+/*明细列表*/
+
+.body {
+  background-color: white;
+}
+
+.forth {
   display: flex;
   flex-direction: column;
 }
-.f-first{
+
+.f-first {
   display: flex;
   flex-direction: row;
-  background-color: red;
-}
-.f-second{
-  display: flex;
-  flex-direction: row;
-  background-color: greenyellow;
+  font-size: 30rpx;
+  background-color: #D7D7D7;
+  justify-content: space-between;
+  margin: 0rpx 5rpx 0rpx 5rpx;
 }
 
-.f-second image{
+.f-second {
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx 10rpx 0rpx 10rpx;
+  border-bottom: 1px solid #D7D7D7;
+}
+
+.f-second image {
   height: 40rpx;
   width: 40rpx;
   border: 2rpx;
+  margin: 0rpx 30rpx 0rpx 10rpx;
+}
+
+.f-second-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 85%;
+}
+
+.five {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60rpx;
+  margin-top: 30%;
 }
 
 /* 圆形点击 */

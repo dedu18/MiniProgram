@@ -1,44 +1,49 @@
 <view class="container">
-  <view class="first">
-    <view>
-      本月支出(元)
+  <view class="head">
+    <view class="first">
+      <view style="color:white">
+        本月支出(元)
+      </view>
+      <view>
+        <picker class="date_picker" mode="date" fields="month" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+          <view>{{date}}</view>
+        </picker>
+      </view>
     </view>
-    <view>
-      <button>月</button>
-    </view>
-    <view>
-      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-        <view class="picker">
-          当前选择: {{date}}
-        </view>
-      </picker>
-    </view>
-  </view>
-  <view class="second">
-    <view>0.00</view>
-  </view>
 
-  <view class="third">
-    <view>本月收入100000.00</view>
-    <view class='line'></view>
-    <view>本月结余100000.00</view>
+    <view class="second">
+      <text>{{money}}</text>
+    </view>
+
+    <view class="third">
+      <view>本月收入 {{income}}</view>
+      <view class='line'></view>
+      <view>本月结余 {{expense}}</view>
+    </view>
   </view>
-  <view wx:if="{{datas.length>0}}">
-    <view class="forth" wx:for="{{datas}}">
-      <view class="f-first">{{item.time}} 支出：100.00 收入0.00</view>
-      <view class="f-second" wx:for="{{item.listdata}}">
-        <image src="{{item.image}}"></image>
-        <view>{{item.label}}| {{item.number}}
+  <view class="body">
+    <view wx:if="{{datas.length>0}}">
+      <view class="forth" wx:for="{{datas}}">
+        <view class="f-first">
+          <view>{{item.time}}</view>
+          <view>支出：{{item.income}} 收入{{item.expense}}</view>
+        </view>
+        <view class="f-second" wx:for="{{item.listdata}}">
+          <image src="{{item.image}}"></image>
+          <view class="f-second-text">
+            <view>{{item.label}}</view>
+            <view>{{item.number}}</view>
+          </view>
         </view>
       </view>
     </view>
-  </view>
-  <view wx:else>
-    去记一笔吧！
+    <view wx:else>
+      <text class="five">去记一笔吧！</text>
+    </view>
   </view>
 </view>
 <!--圆形点击框  -->
-<view class="round-click">
+<view class="round-click" bindtap="toRecord">
   <text>记</text>
   <!-- <image src="/images/jiyibi.jpg"></image> -->
 </view>
