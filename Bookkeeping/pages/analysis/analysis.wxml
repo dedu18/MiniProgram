@@ -1,2 +1,6 @@
-<!--pages/analysis/analysis.wxml-->
-<text>pages/analysis/analysis.wxml</text>
+<view class="container">
+  <text>收入</text>
+  <text>支出</text>
+  <!-- <canvas canvas-id="pieCanvas" disable-scroll="true" class="canvas" /> -->
+  <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" />
+</view>
