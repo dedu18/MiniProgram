@@ -1,23 +1,35 @@
 <view class="container">
-  <view>记账类型
-    <radio-group class="radio-group" bindchange="radioChange">
-      <radio class="radio" wx:for-items="{{recordtype}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
-        <text>{{item.value}}</text>
-      </radio>
-    </radio-group>
-  </view>
-  <view>
-    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+  <view class="selecttype">
+    <image src="/images/record/type.jpg" mode="aspectFit" style="width:40rpx;height:50rpx;margin-left: 100rpx;" />
+    <text style="margin-left: 10rpx;">类型：</text>
+    <picker style="margin-left: 15rpx;" bindchange="bindRecordtypeChange" value="{{recordtype}}" range="{{recordtypes}}" range-key="{{'value'}}">
       <view class="picker">
-        选择日期: {{date}}
+        {{recordtypes[recordtype].value}}
       </view>
     </picker>
   </view>
-  <view>输入金额：
-    <input class="weui-input" type="digit" placeholder="请输入数字" />
+  <view class="selectdate">
+    <image src="/images/record/date.jpg" mode="aspectFit" style="width:40rpx;height:50rpx;margin-left: 100rpx;" />
+    <text style="margin-left: 10rpx;">日期：</text>
+    <picker style="margin-left: 15rpx;" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        {{date}}
+      </view>
+    </picker>
   </view>
-  <view>备注说明<input class="weui-input" maxlength="10" placeholder="最输入" /></view>
-  <view>
-    <button type="primary" loading="{{loading}}" disabled="{{recordable}}" bindtap="addRecord">新增记账</button>
+  <view class="inputnumber">
+    <image src="/images/record/money.jpg" mode="aspectFit" style="width:40rpx;height:50rpx;margin-left: 100rpx;" />
+    <text style="margin-left: 10rpx;">金额：</text>
+    <input style="margin-left: 15rpx;" type="digit" placeholder="0.0" />
+  </view>
+  <view class="inputdesc">
+    <image src="/images/record/desc.jpg" mode="aspectFit" style="width:40rpx;height:50rpx;margin-left: 100rpx;" />
+    <text style="margin-left: 10rpx;">说明：</text>
+    <input style="margin-left: 15rpx;" maxlength="10" placeholder="请备注明细" />
+  </view>
+  <view class="btnadd">
+    <button class="btn" loading="{{loading}}" disabled="{{recordable}}" bindtap="addRecord">
+    <view style="color:white">新增记账</view>
+    </button>
   </view>
 </view>

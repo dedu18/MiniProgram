@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/record/record",
     "pages/index/index",
     "pages/center/center",
-    "pages/analysis/analysis"
+    "pages/analysis/analysis",
+    "pages/record/record"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

@@ -38,7 +38,7 @@
       </view>
     </view>
     <view wx:else>
-      <text class="five">去记一笔吧！</text>
+      <text class="five">空空如也，去记一笔吧！</text>
     </view>
   </view>
 </view>

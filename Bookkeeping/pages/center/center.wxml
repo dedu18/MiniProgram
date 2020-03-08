@@ -1,2 +1,31 @@
-<!--pages/center/center.wxml-->
-<text>pages/center/center.wxml</text>
+<view class="container">
+  <view class="user">
+    <image class="headimage" mode="aspectFit" src="/images/user/user1.jpg" />
+    <text style="margin-left: 20rpx;margin-top: 75rpx;color:white;">登陆/注册</text>
+  </view>
+  <view class="menuline"></view>
+  <view class="menu">
+    <image class="aboutimage" mode="aspectFit" src="/images/user/about.jpg" />
+    <text style="margin-left:20rpx;margin-right: 400rpx;">关于我们</text>
+    <image class="rightimage" mode="aspectFit" src="/images/user/right.jpg" />
+  </view>
+  <view class="menulinebet"></view>
+  <view class="menu">
+    <image class="aboutimage" mode="aspectFit" src="/images/user/about.jpg" />
+    <text style="margin-left:20rpx;margin-right: 400rpx;">类别设置</text>
+    <image class="rightimage" mode="aspectFit" src="/images/user/right.jpg" />
+  </view>
+  <view class="menulinebet"></view>
+  <view class="menu">
+    <image class="aboutimage" mode="aspectFit" src="/images/user/about.jpg" />
+    <text style="margin-left:20rpx;margin-right: 400rpx;">导出Excel</text>
+    <image class="rightimage" mode="aspectFit" src="/images/user/right.jpg" />
+  </view>
+  <view class="menulinebet"></view>
+  <view class="menu">
+    <image class="aboutimage" mode="aspectFit" src="/images/user/about.jpg" />
+    <text style="margin-left:20rpx;margin-right: 400rpx;">关于我们</text>
+    <image class="rightimage" mode="aspectFit" src="/images/user/right.jpg" />
+  </view>
+  <view class="menulinebet"></view>
+</view>
