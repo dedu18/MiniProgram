@@ -1,6 +1,14 @@
 <view class="container">
-  <text>收入</text>
-  <text>支出</text>
-  <!-- <canvas canvas-id="pieCanvas" disable-scroll="true" class="canvas" /> -->
+  <view class="timepicker">
+    <image src="/images/record/date.jpg" mode="aspectFit" style="width:40rpx;height:50rpx;margin-left: 10rpx;" />
+    <picker class="date_picker" mode="date" fields="month" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <text style="color:#8b8b8b">{{date}}</text>
+    </picker>
+    <text style="margin-top: 10rpx;margin-left: 20rpx;font-weight:bold;">收入总金额：{{income}}</text>
+  </view>
+  <canvas canvas-id="pieCanvas" disable-scroll="true" class="canvas" />
+  <view class="line"></view>
+  <text style="margin-left: 200rpx;font-weight:bold;">支出总金额：{{expense}}</text>
+  <canvas canvas-id="pieCanvas1" disable-scroll="true" class="canvas" />
   <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" />
 </view>
