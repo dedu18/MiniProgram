@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/analysis/analysis",
     "pages/center/center",
-    "pages/record/record"
+    "pages/record/record",
+    "pages/cloudtest/cloudtest"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

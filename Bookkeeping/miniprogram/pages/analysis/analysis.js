@@ -38,7 +38,6 @@ Page({
     this.setData({
       imageWidth: wx.getSystemInfoSync().windowWidth
     });
-    console.log(this.data.imageWidth);
 
     //计算屏幕宽度比列
     windowW = this.data.imageWidth / 375;
