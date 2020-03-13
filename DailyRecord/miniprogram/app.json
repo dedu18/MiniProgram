@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/history/history",
+    "pages/index/index",
+    "pages/center/center"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "日常打卡",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "打卡",
+        "iconPath": "images/record.png",
+        "selectedIconPath": "images/record.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "历史",
+        "iconPath": "images/history.png",
+        "selectedIconPath": "images/history.png"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "我的",
+        "iconPath": "images/center.jpg",
+        "selectedIconPath": "images/center.jpg"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

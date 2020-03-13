@@ -1,0 +1,42 @@
+<!-- 引入wxs脚本 -->
+<wxs src="../../utils/utils.wxs" module="utils" />
+<view class="container">
+  <view class="date">
+    <!-- 记录开始时间 -->
+    <view class="startdate">
+      <text>开始日期：</text>
+      <picker mode="date" value="{{startdate}}" start="2015-09-01" end="2017-09-01" bindchange="bindStartDateChange">
+        <view style="margin-left: 5rpx;">
+          {{startdate}}
+        </view>
+      </picker>
+    </view>
+    <!-- 记录结束时间 -->
+    <view class="enddate">
+      <text>结束日期：</text>
+      <picker mode="date" value="{{enddate}}" start="2015-09-01" end="2017-09-01" bindchange="bindEndDateChange">
+        <view style="margin-left: 5rpx;">
+          {{enddate}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+
+  <view class="body">
+    <view wx:if="{{datas.length>0}}">
+      <view class="f-second" wx:for="{{datas}}">
+        <view class="f-second-text">
+          <view>{{utils.dateFormat(item.recorddate)}}</view>
+          <view>{{item.datetype.value}}</view>
+          <view>{{item.recordtype.value}}</view>
+          <icon type="clear" data-recordid="{{item._id}}" size="20" bindtap="removeRecord"/>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <text class="five">空空如也，去打卡吧！</text>
+    </view>
+  </view>
+
+</view>

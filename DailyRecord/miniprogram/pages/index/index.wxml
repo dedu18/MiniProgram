@@ -1,0 +1,31 @@
+<view class="container">
+  <!-- 打卡类型 -->
+  <view class="type">
+    <text>类型：</text>
+    <picker bindchange="bindRecordtypeChange" value="{{recordtypeindex}}" range="{{recordtypes}}" range-key="{{'value'}}">
+      <view>
+        {{recordtypes[recordtypeindex].value}}
+      </view>
+    </picker>
+  </view>
+  <!-- 打卡时间 -->
+  <view class="date">
+    <text>日期：</text>
+    <picker mode="date" value="{{recorddate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <view style="margin-left: 5rpx;">
+        {{recorddate}}
+      </view>
+    </picker>
+    <picker bindchange="bindRecordDateDetainChange" value="{{datetypeindex}}" range="{{datetypes}}" range-key="{{'value'}}">
+      <view style="margin-left: 10rpx;">
+        {{datetypes[datetypeindex].value}}
+      </view>
+    </picker>
+  </view>
+  <!-- 打卡按钮 -->
+  <view>
+    <button type="default" loading="{{loading}}" disabled="{{recordable}}" bindtap="addRecord">
+      <view >新增打卡</view>
+    </button>
+  </view>
+</view>
