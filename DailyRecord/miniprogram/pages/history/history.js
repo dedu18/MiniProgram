@@ -59,7 +59,7 @@ Page({
     const _ = DB.command
     DB.collection('daily_record').where({
       recorddate: _.and(_.gt(
-        new Date(this.data.startdate)), _.lt(new Date(this.data.enddate)))
+        Date.parse(this.data.startdate)), _.lt(Date.parse(this.data.enddate)))
     }).get({
       success: function(res) {
         that.setData({

@@ -28,8 +28,8 @@
       <view class="f-second" wx:for="{{datas}}">
         <view class="f-second-text">
           <view>{{utils.dateFormat(item.recorddate)}}</view>
-          <view>{{item.datetype.value}}</view>
-          <view>{{item.recordtype.value}}</view>
+          <view style="margin-left:15rpx;">{{item.datetype.value}}</view>
+          <view style="margin-left:15rpx;">{{item.recordtype.value}}</view>
           <icon type="clear" data-recordid="{{item._id}}" size="20" bindtap="removeRecord"/>
         </view>
       </view>

@@ -61,7 +61,7 @@ Page({
     that.resetRecordBtn(that)
     var recordtype = this.data.recordtypes[this.data.datetypeindex]
     var datetype = this.data.datetypes[this.data.datetypeindex]
-    var recorddate = new Date(this.data.recorddate)
+    var recorddate = Date.parse(this.data.recorddate)
     var recordtime = Date.parse(new Date())
     //新增打卡记录
     DB.collection('daily_record').add({
