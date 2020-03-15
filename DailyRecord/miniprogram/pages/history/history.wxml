@@ -32,7 +32,8 @@
           <view>{{utils.dateFormat(item.recorddate)}}</view>
           <view style="margin-left:15rpx;">{{item.datetype.value}}</view>
           <view style="margin-left:15rpx;">{{item.recordtype.value}}</view>
-          <icon type="clear" data-recordid="{{item._id}}" size="20" bindtap="removeRecord" />
+          <icon style="margin-left: 10rpx;" type="clear" data-recordid="{{item._id}}" size="20" bindtap="removeRecord" />
+          <icon style="margin-left: 10rpx;" type="search" data-desc="{{item.desc}}" size="20" bindtap="queryRecordDesc" />
         </view>
       </view>
     </view>

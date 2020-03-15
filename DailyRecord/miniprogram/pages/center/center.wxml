@@ -1,1 +1,4 @@
-<text>个人中心</text>
+<view class="container">
+  <text class="title">个人打卡分析</text>
+  <calendar selected="{{selected}}" bindselect="bindselect" bindgetdate="bindgetdate" />
+</view>

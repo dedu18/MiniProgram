@@ -43,6 +43,19 @@ Page({
     })
     that.loadDataFromDB(that)
   },
+  queryRecordDesc: function (e) {
+    wx.showModal({
+      title: '备注',
+      content: e.currentTarget.dataset.desc + '',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
   loadDataFromDB: function(that) {
     const _ = DB.command
     DB.collection('daily_record').where({

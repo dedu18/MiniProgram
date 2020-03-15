@@ -5,7 +5,7 @@
     <swiper indicator-dots="{{true}}" indicator-color="#ffffff" autoplay="true" circular="true">
       <block wx:for="{{banner}}" wx:key="banner">
         <swiper-item>
-          <image style="width:100%" src='{{item}}' mode="aspectFit"  />
+          <image style="width:100%" src='{{item}}' mode="aspectFit" />
         </swiper-item>
       </block>
     </swiper>
@@ -15,7 +15,7 @@
   <!-- 打卡类型 -->
   <view class="type">
     <text>类型：</text>
-    <picker bindchange="bindRecordtypeChange" value="{{recordtypeindex}}" range="{{recordtypes}}" range-key="{{'value'}}">
+    <picker bindchange="bindRecordtypeChange" range="{{recordtypes}}" range-key="{{'value'}}">
       <view style="background: rgb(235, 235, 235);">
         {{recordtypes[recordtypeindex].value}}
       </view>
@@ -35,8 +35,13 @@
       </view>
     </picker>
   </view>
+  <!-- 打卡备注文本 -->
+  <view class="desc">
+    <text>备注：</text>
+    <textarea style="background: rgb(235, 235, 235);" bindinput='descinput' placeholder="请输入" auto-focus />
+  </view>
   <!-- 打卡按钮 -->
-  <view>
+  <view style="margin-top: 20rpx;">
     <button type="default" loading="{{loading}}" hover-class="btn-class" disabled="{{recordable}}" bindtap="addRecord">新增打卡</button>
   </view>
 </view>

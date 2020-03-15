@@ -42,6 +42,7 @@ Page({
       }
     ],
     datetypeindex: 0,
+    desc: '',
     loading: false,
     recordable: false
   },
@@ -60,6 +61,11 @@ Page({
       datetypeindex: e.detail.value
     })
   },
+  descinput: function(e) {
+    this.setData({
+      desc: e.detail.value
+    })
+  },
   addRecord: function() {
     let that = this
     that.resetRecordBtn(that)
@@ -67,13 +73,15 @@ Page({
     var datetype = this.data.datetypes[this.data.datetypeindex]
     var recorddate = this.data.recorddate
     var recordtime = Date.parse(new Date())
+    var desc = this.data.desc
     //新增打卡记录
     DB.collection('daily_record').add({
       data: {
         recordtype: recordtype,
         recorddate: recorddate,
         datetype: datetype,
-        recordtime: recordtime
+        recordtime: recordtime,
+        desc: desc
       }
     }).then(res => {
       console.log("新增成功")
