@@ -9,7 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    startdate: "2005-02-02",
+    days: 10,
+    startdate: "2020-02-02",
     enddate: "2021-02-02",
     datas: []
   },
@@ -17,11 +18,15 @@ Page({
     this.setData({
       startdate: e.detail.value
     })
+    let that = this
+    that.loadDataFromDB(that)
   },
   bindEndDateChange: function(e) {
     this.setData({
       enddate: e.detail.value
     })
+    let that = this
+    that.loadDataFromDB(that)
   },
   removeRecord: function(e) {
     let that = this
@@ -33,6 +38,20 @@ Page({
               datas: res.data
             })
           }
+        })
+      }
+    })
+    that.loadDataFromDB(that)
+  },
+  loadDataFromDB: function(that) {
+    const _ = DB.command
+    DB.collection('daily_record').where({
+      recorddate: _.and(_.gt(
+        Date.parse(this.data.startdate)), _.lt(Date.parse(this.data.enddate)))
+    }).get({
+      success: function (res) {
+        that.setData({
+          datas: res.data
         })
       }
     })
@@ -56,17 +75,7 @@ Page({
    */
   onShow: function() {
     let that = this
-    const _ = DB.command
-    DB.collection('daily_record').where({
-      recorddate: _.and(_.gt(
-        Date.parse(this.data.startdate)), _.lt(Date.parse(this.data.enddate)))
-    }).get({
-      success: function(res) {
-        that.setData({
-          datas: res.data
-        })
-      }
-    })
+    that.loadDataFromDB(that)
   },
 
   /**

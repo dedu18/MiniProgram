@@ -1,11 +1,14 @@
 <!-- 引入wxs脚本 -->
 <wxs src="../../utils/utils.wxs" module="utils" />
 <view class="container">
+  <view class="title">
+    <text style="margin:0rpx 0rpx 0rpx 50rpx; color:red;">打卡记录，已打卡{{days}}天</text>
+  </view>
   <view class="date">
     <!-- 记录开始时间 -->
     <view class="startdate">
       <text>开始日期：</text>
-      <picker mode="date" value="{{startdate}}" start="2015-09-01" end="2017-09-01" bindchange="bindStartDateChange">
+      <picker mode="date" value="{{startdate}}" bindchange="bindStartDateChange">
         <view style="margin-left: 5rpx;">
           {{startdate}}
         </view>
@@ -14,15 +17,14 @@
     <!-- 记录结束时间 -->
     <view class="enddate">
       <text>结束日期：</text>
-      <picker mode="date" value="{{enddate}}" start="2015-09-01" end="2017-09-01" bindchange="bindEndDateChange">
+      <picker mode="date" value="{{enddate}}" bindchange="bindEndDateChange">
         <view style="margin-left: 5rpx;">
           {{enddate}}
         </view>
       </picker>
     </view>
   </view>
-
-
+  <!-- 明细列表 -->
   <view class="body">
     <view wx:if="{{datas.length>0}}">
       <view class="f-second" wx:for="{{datas}}">
@@ -30,7 +32,7 @@
           <view>{{utils.dateFormat(item.recorddate)}}</view>
           <view style="margin-left:15rpx;">{{item.datetype.value}}</view>
           <view style="margin-left:15rpx;">{{item.recordtype.value}}</view>
-          <icon type="clear" data-recordid="{{item._id}}" size="20" bindtap="removeRecord"/>
+          <icon type="clear" data-recordid="{{item._id}}" size="20" bindtap="removeRecord" />
         </view>
       </view>
     </view>

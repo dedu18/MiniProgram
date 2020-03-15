@@ -1,9 +1,22 @@
+<!-- 引入wxs脚本 -->
+<wxs src="../../utils/utils.wxs" module="utils" />
 <view class="container">
+  <view class="banner">
+    <swiper indicator-dots="{{true}}" indicator-color="#ffffff" autoplay="true" circular="true">
+      <block wx:for="{{banner}}" wx:key="banner">
+        <swiper-item>
+          <image style="width:100%" src='{{item}}' mode="aspectFit"  />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 励志话语 -->
+  <text style="margin:15rpx;border: 1px solid black; padding:20rpx;">{{inspirationalphrases}}</text>
   <!-- 打卡类型 -->
   <view class="type">
     <text>类型：</text>
     <picker bindchange="bindRecordtypeChange" value="{{recordtypeindex}}" range="{{recordtypes}}" range-key="{{'value'}}">
-      <view>
+      <view style="background: rgb(235, 235, 235);">
         {{recordtypes[recordtypeindex].value}}
       </view>
     </picker>
@@ -11,21 +24,19 @@
   <!-- 打卡时间 -->
   <view class="date">
     <text>日期：</text>
-    <picker mode="date" value="{{recorddate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-      <view style="margin-left: 5rpx;">
-        {{recorddate}}
+    <picker mode="date" value="{{recorddate}}" bindchange="bindDateChange">
+      <view style="margin-left: 5rpx; background: rgb(235, 235, 235);">
+        {{utils.dateFormat(recorddate)}}
       </view>
     </picker>
     <picker bindchange="bindRecordDateDetainChange" value="{{datetypeindex}}" range="{{datetypes}}" range-key="{{'value'}}">
-      <view style="margin-left: 10rpx;">
+      <view style="margin-left: 10rpx; background: rgb(235, 235, 235);">
         {{datetypes[datetypeindex].value}}
       </view>
     </picker>
   </view>
   <!-- 打卡按钮 -->
   <view>
-    <button type="default" loading="{{loading}}" disabled="{{recordable}}" bindtap="addRecord">
-      <view >新增打卡</view>
-    </button>
+    <button type="default" loading="{{loading}}" hover-class="btn-class" disabled="{{recordable}}" bindtap="addRecord">新增打卡</button>
   </view>
 </view>

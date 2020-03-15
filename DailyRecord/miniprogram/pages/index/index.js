@@ -9,6 +9,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    banner: [
+      '../../images/banner2.jpg', '../../images/banner4.jpg', '../../images/banner5.jpg'
+    ],
+    inspirationalphrases: '每天告诉自己一次：我真的很不错。',
     recordtypes: [{
         name: 'study',
         value: '学习'
@@ -23,7 +27,7 @@ Page({
       }
     ],
     recordtypeindex: 0,
-    recorddate: "2020-02-02",
+    recorddate: new Date().getTime(),
     datetypes: [{
         name: 'morning',
         value: '上午'
@@ -59,9 +63,9 @@ Page({
   addRecord: function() {
     let that = this
     that.resetRecordBtn(that)
-    var recordtype = this.data.recordtypes[this.data.datetypeindex]
+    var recordtype = this.data.recordtypes[this.data.recordtypeindex]
     var datetype = this.data.datetypes[this.data.datetypeindex]
-    var recorddate = Date.parse(this.data.recorddate)
+    var recorddate = this.data.recorddate
     var recordtime = Date.parse(new Date())
     //新增打卡记录
     DB.collection('daily_record').add({
