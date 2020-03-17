@@ -1,0 +1,42 @@
+<view class="container">
+  <view wx:if="{{showLoading}}">
+    <view class="loading">玩命加载中…</view>
+  </view>
+  <view wx:else>
+    <!-- 列表滚动条 -->
+    <scroll-view scroll-y="true" style="height: {{windowHeight}}rpx" bindscroll="scroll" bindscrolltolower="scrolltolower">
+      <view class="film">
+        <!-- 列表 -->
+        <view wx:for="{{films}}" wx:for-index="filmIndex" wx:for-item="filmItem" wx:key="film">
+          <view data-id="{{filmItem.id}}" class="film-item" catchtap="viewFilmDetail">
+            <!-- 每个封面 -->
+            <view class="film-item-cover">
+              <image src="{{filmItem.images.large}}" class="film-item-cover-img"></image>
+              <view class="film-rating">
+                <view>
+                  {{filmItem.rating.average}}分
+                </view>
+              </view>
+            </view>
+            <!-- 每个介绍 -->
+            <view class="file-item-intro">
+              <view class="film-item-title">{{filmItem.title}}</view>
+              <view class="film-item-tag">
+                <view class="film-tag-subitem" wx:for="{{filmItem.genres}}" wx:for-item="filmTagSubItem" wx:key="filmTag" data-tag="{{filmTagSubItem}}" catchtap="viewFilmByTag">
+                  {{filmTagSubItem}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 底线加载 -->
+        <!-- <view wx:if="{{more}}">
+          <view class="endline">玩命加载中</view>
+        </view>
+        <view wx:else>
+          <view class="endline">我也是有底线的</view>
+        </view> -->
+      </view>
+    </scroll-view>
+  </view>
+</view>

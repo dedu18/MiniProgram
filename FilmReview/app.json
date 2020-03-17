@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/recom.png",
+        "selectedIconPath": "images/recom_active.png",
+        "text": "推荐"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/comment.png",
+        "selectedIconPath": "images/comment_active.png",
+        "text": "围观"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/search_active.png",
+        "text": "搜索"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_active.png",
+        "text": "个人"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
