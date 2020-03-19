@@ -1,0 +1,89 @@
+<view class="container">
+  <!-- 电影详情 -->
+  <view class="filmdesc">
+    <!-- 背景 -->
+    <view class="filmdescbackgrond"></view>
+    <!-- 电影宣传图 -->
+    <image class="filmdesccover" src="{{filmDetail.images.large}}"></image>
+    <!-- 电影介绍板块 -->
+    <view class="filmdescintro">
+      <!-- 电影名 -->
+      <view class="filmdescintrotitle">{{filmDetail.title}}</view>
+      <!-- 导演 -->
+      <view class="filmdescintrotxt">导演：{{filmDetail.directors[0].name}}</view>
+      <!-- 演员 -->
+      <view class="filmdescintrotxt">演员：
+        <block wx:for="{{filmDetail.casts}}" wx:for-item="filmDetailCastItem" wx:for-index="filmDetailCastIndex" wx:key="filmDetailCastItem">
+          {{filmDetailCastItem.name}}
+          <block wx:if="{{filmDetailCastIndex !== filmDetail.casts.length - 1}}">/</block>
+        </block>
+      </view>
+      <!-- 评分 -->
+      <view class="filmdescintrotxt">豆瓣评分：
+          {{filmDetail.rating.average}}分
+      </view>
+      <!-- 电影年份 -->
+      <view class="filmdescintrotxt">上映年份：{{filmDetail.year}}年</view>
+    </view>
+  </view>
+  <!-- 电影人数统计 -->
+  <view class="filmtotalnum">
+    <view class="filmeachnum">
+      <view class="filmnum">{{filmDetail.collectCount}}</view>
+      <view class="filmnumtitle">看过</view>
+    </view>
+    <view class="filmeachnum">
+      <view class="filmnum">{{filmDetail.wishCount}}</view>
+      <view class="filmnumtitle">想看</view>
+    </view>
+    <view class="filmeachnum">
+      <view class="filmnum">{{filmDetail.ratingsCount}}</view>
+      <view class="filmnumtitle">评分人数</view>
+    </view>
+  </view>
+  <!-- 电影剧情及人物介绍 -->
+  <view class="filmperson">
+    <!-- 剧情简介 -->
+    <view class="filmpersontitle">剧情简介</view>
+    <view class="filmpersonintro">{{filmDetail.summary}}</view>
+    <!-- 导演及演员简介 -->
+    <view class="filmpersontitle">导演/演员</view>
+    <view class="filmeachperson">
+      <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;">
+        <view class="filmpersondirector" data-id="{{filmDetail.directors[0].id}}" bindtap="viewPersonDetail">
+          <!-- 导演 -->
+          <image style="width: 280rpx; height: 400rpx;" src="{{filmDetail.directors[0].avatars.medium}}" />
+          <view style="color: #666;">{{filmDetail.directors[0].name}}</view>
+          <view style="color: #999;">导演</view>
+        </view>
+        <!-- 演员横向列表 -->
+        <block wx:for="{{filmDetail.casts}}" wx:for-item="filmDetailCastItem" wx:key="filmDetailCastItem">
+          <view class="filmpersonactor" data-id="{{filmDetailCastItem.id}}" bindtap="viewPersonDetail">
+            <image style="width: 280rpx; height: 400rpx;" src="{{filmDetailCastItem.avatars.medium}}" />
+            <view style="color: #666;">{{filmDetailCastItem.name}}</view>
+            <view style="color: #999;">演员</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <view class="filmtagtitle">标签</view>
+    <view class="filmtag">
+      <view wx:for="{{filmDetail.genres}}" wx:for-item="filmDetailTagItem" wx:key="filmDetailTagItem">
+        <view class="filmtagitem" data-tag="{{filmDetailTagItem}}" catchtap="viewFilmByTag">{{filmDetailTagItem}}</view>
+      </view>
+    </view>
+
+    <view class="filmtagtitle">评论</view>
+    <view class="comments">
+      <view wx:for="{{comments}}" wx:for-item="comment" wx:key="comment">
+        <view class="comment">
+          <view style="display: flex; flex-direction: row;">
+            <text style="color:blue">{{comment.commentname}}</text>
+            <view style="margin-left:20rpx; color: #aaa"> {{comment.commenttime}}</view>
+          </view>
+          <text>{{comment.commentshortinfo}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

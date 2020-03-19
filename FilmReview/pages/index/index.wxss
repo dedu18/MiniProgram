@@ -43,11 +43,11 @@
     width: 100%;
     height: 50rpx;
     padding-right: 20rpx;
-    font-size: 12px;
+    font-size: 15px;
     text-align: right;
     line-height: 50rpx;
-    background-color: rgba(0, 0, 0, .65);
-    color: #fff;
+    background-color: rgba(58, 56, 56, 0.65);
+    color: #f59c16;
 }
 
 .file-item-intro {
