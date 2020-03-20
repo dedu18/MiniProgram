@@ -81,7 +81,7 @@
             <text style="color:blue">{{comment.commentname}}</text>
             <view style="margin-left:20rpx; color: #aaa"> {{comment.commenttime}}</view>
           </view>
-          <text>{{comment.commentshortinfo}}</text>
+          <text style="font-size:28rpx;">{{comment.commentshortinfo}}</text>
         </view>
       </view>
     </view>

@@ -1,0 +1,33 @@
+<view class="container">
+  <text class="toptitle">电影 Top 250</text>
+  <scroll-view scroll-y="true" style="height: {{windowHeight}}rpx">
+    <view wx:for="{{topfilms}}" wx:for-item="topfilmitem" wx:for-index="topfilmindex" wx:key="topfilmitem">
+      <view class="topitem">
+        <view class="topitemindex">{{topfilmindex+1}}</view>
+        <!-- 左边封面图 -->
+        <image class="topitemimage" src="{{topfilmitem.images.large}}"></image>
+        <!-- 右边介绍 -->
+        <view class="topitemright">
+          <!-- 中英文电影名 -->
+          <view class="topitemrighttitle">
+            <text>{{topfilmitem.cntitle}}</text>
+            <!-- /
+          <text>{{topfilmitem.entitle}}</text> -->
+          </view>
+          <!-- 导演 主演 -->
+          <view style="font-size: 25rpx;">{{topfilmitem.persons}}</view>
+          <!-- 年份 类型 -->
+          <view style="font-size: 25rpx;">{{topfilmitem.intro}}</view>
+          <!-- 评分 评价 -->
+          <view class="topitemrightaverage">
+            <view style="color: #e09015;padding-right: 30rpx;">{{topfilmitem.rating.average}}分</view>
+            <view>{{topfilmitem.commentnum}}人评价 </view>
+          </view>
+          <!-- 引言 -->
+          <view style="font-size: 27rpx;color: #666;">"{{topfilmitem.quote}}"</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="endline">到底啦~</view>
+</view>

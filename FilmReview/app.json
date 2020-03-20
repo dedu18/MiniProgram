@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/comment/comment",
+    "pages/top/top",
     "pages/search/search",
     "pages/home/home",
     "pages/detail/detail"
@@ -21,9 +21,9 @@
         "text": "推荐"
       },
       {
-        "pagePath": "pages/comment/comment",
-        "iconPath": "images/comment.png",
-        "selectedIconPath": "images/comment_active.png",
+        "pagePath": "pages/top/top",
+        "iconPath": "images/top.png",
+        "selectedIconPath": "images/top_active.png",
         "text": "围观"
       },
       {
