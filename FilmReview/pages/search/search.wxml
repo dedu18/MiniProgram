@@ -1,2 +1,26 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="container">
+  <view style="margin: 30rpx;">
+    <view style="display: flex;flex-direction: row;">
+      <input class="searchtxt" name="keyword" auto-focus placeholder="搜索电影、电视剧、综艺、影人" />
+      <button type="primary" style="margin-left: 2rpx;" size="mini" loading="{{searchload}}" bindtap="search">搜索</button>
+    </view>
+  </view>
+  <!-- 搜索默认页 -->
+  <view wx:if="{{searchpage}}">
+    <view style="padding: 30rpx;">
+      <view class="searchhottitle">热门搜索</view>
+      <view wx:for="{{hotKeyword}}" wx:for-item="hotKeywordItem" wx:key="hotKeywordItem" class="searchhotitem" data-keyword="{{hotKeywordItem}}" bindtap="searchByKeyword">{{hotKeywordItem}}</view>
+      <view class="searchhottitle">热门标签</view>
+      <view wx:for="{{hotTag}}" wx:for-item="hotTagItem" wx:key="hotTagItem" class="searchhotitem" data-keyword="{{hotTagItem}}" bindtap="searchByTag">{{hotTagItem}}</view>
+    </view>
+  </view>
+  <!-- 搜索结果列表 -->
+  <view wx:else>
+    <view wx:if="{{searchresult.length == 0}}" style="margin-top:60rpx;">
+      加载中，请稍等
+    </view>
+    <view wx:else>
+    
+    </view>
+  </view>
+</view>

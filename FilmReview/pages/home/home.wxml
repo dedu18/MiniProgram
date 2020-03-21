@@ -1,2 +1,23 @@
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view class="container">
+  <!-- 用户头像和名字 -->
+  <view class="personinfo">
+    <image class="photo" src="{{userInfo.avatarUrl}}" />
+    <view class="nickname">
+      {{userInfo.nickName}}
+    </view>
+  </view>
+
+  <!-- 功能列表 -->
+  <view wx:if="{{login}}">
+    <view class="menus">
+      <view class="menu" wx:for="{{mode}}">
+        {{item}}
+        <image class="iconright" src="../../images/icon-right.png"></image>
+      </view>
+    </view>
+    <view class="loginout">退出登陆</view>
+  </view>
+  <view wx:else>
+    点击微信登陆
+  </view>
+</view>

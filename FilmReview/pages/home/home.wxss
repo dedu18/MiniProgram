@@ -1,1 +1,60 @@
-/* pages/home/home.wxss */
+.container {
+  padding: 0rpx;
+  background-color: #f5f6f7;
+  height: 100%;
+}
+
+.personinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #fff;
+}
+
+.photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 90px;
+}
+
+.nickname {
+  margin-top: 15px;
+  text-align: center;
+  color: #696969;
+}
+
+.menus {
+  width: 750rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+  margin-top: 15rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.menu {
+  height: 45px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 10px;
+  line-height: 45px;
+  position: relative;
+}
+
+.iconright {
+  position: absolute;
+  width: 50rpx;
+  height: 40rpx;
+  right: 10rpx;
+  top: 25rpx;
+}
+
+.loginout {
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  background-color: #fff;
+  margin-top: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+}
