@@ -9,15 +9,19 @@
 
   <!-- 功能列表 -->
   <view wx:if="{{login}}">
-    <view class="menus">
-      <view class="menu" wx:for="{{mode}}">
-        {{item}}
+    <view class="menus" bindtap="wechatlogin">
+      <view class="menu" wx:for="{{meuns}}" wx:key="menu" wx:for-index="idx" wx:for-item="menu">
+        {{menu}}
         <image class="iconright" src="../../images/icon-right.png"></image>
       </view>
     </view>
-    <view class="loginout">退出登陆</view>
+    <view class="loginout" bindtap="loginout">退出登陆</view>
   </view>
   <view wx:else>
-    点击微信登陆
+    <view class="login">
+      <image class="loginimage" src="../../images/weixin2.jpg"></image>
+      <!-- <text style="font-size:25rpx;color:#696969;">微信登陆</text> -->
+      <button open-type="getUserInfo" style="display: block" size="mini" bindgetuserinfo="wechatlogin">微信登陆</button>
+    </view>
   </view>
 </view>
