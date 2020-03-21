@@ -40,6 +40,10 @@
       <view class="filmnum">{{filmDetail.ratingsCount}}</view>
       <view class="filmnumtitle">评分人数</view>
     </view>
+    <view class="filmeachnum" bindtap="toplay" data-id="1">
+      <image style="width:50rpx;height:47rpx;" src="../../images/play.jpg"/>
+      <view class="filmnumtitle">播放源</view>
+    </view>
   </view>
   <!-- 电影剧情及人物介绍 -->
   <view class="filmperson">

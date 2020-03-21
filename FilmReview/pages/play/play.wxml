@@ -1,0 +1,16 @@
+<view class="container">
+  <video id="video" style="width:100%;" src="{{url}}" enable-danmu danmu-btn controls></video>
+  <view class="danmu">
+    <text style="margin-left:20rpx;width:14%;">弹幕：</text>
+    <input style="margin-left:0rpx;width:80%;" placeholder="说点什么吧~~~" bindblur="bindInputBlur" />
+    <view class="sendbtn" bindtap="bindSendDanmu">发送</view>
+  </view>
+  <view class="menu">
+    <button type="primary" size="mini" bindtap="videoPlay">播放</button>
+    <button type="primary" size="mini" bindtap="videoPause">暂停</button>
+    <button type="primary" size="mini" bindtap="videoPlayBackRate">倍速</button>
+    <button type="primary" size="mini" bindtap="videoPlayRestRate">原速</button>
+    <button type="primary" size="mini" bindtap="videorequestFullScreen">全屏</button>
+    <button type="primary" size="mini" bindtap="videoSeek0">重播</button>
+  </view>
+</view>

@@ -82,15 +82,9 @@ Page({
   scrolltolower: function () {
     var that = this
     console.log("到低了")
-    // douban.fetchFilms.call(that, url, config.city, that.data.start, config.count)
   },
   searchFilmWithTag: function (e) {
     var data = e.currentTarget.dataset
-    console.log(data)
-    // var keyword = data.tag
-    // wx.navigateTo({
-    //   url: '../searchResult/searchResult?url=' + encodeURIComponent(searchByTagUrl) + '&keyword=' + keyword
-    // })
   },
   onLoad: function() {},
   onShow: function() {
