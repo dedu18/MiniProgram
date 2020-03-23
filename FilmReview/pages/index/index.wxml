@@ -23,7 +23,7 @@
             <!-- 每个介绍 -->
             <view class="file-item-intro">
               <!-- 标题 -->
-              <view class="film-item-title">{{filmItem.title}}</view>
+              <view class="film-item-title">{{filmItem.cntitle}}</view>
               <!-- 类别标签 -->
               <view class="film-item-tag">
                 <view class="film-tag-subitem" wx:for="{{filmItem.genres}}" wx:for-item="filmTagSubItem" wx:key="filmTag" data-tag="{{filmTagSubItem}}" catchtap="searchFilmWithTag">

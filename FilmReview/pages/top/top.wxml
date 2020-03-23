@@ -2,7 +2,7 @@
   <text class="toptitle">电影 Top 250</text>
   <scroll-view scroll-y="true" style="height: {{windowHeight}}rpx">
     <view wx:for="{{topfilms}}" wx:for-item="topfilmitem" wx:for-index="topfilmindex" wx:key="topfilmitem">
-      <view class="topitem">
+      <view class="topitem" bindtap="tofilmdetail" data-id="{{topfilmitem.id}}">
         <view class="topitemindex">{{topfilmindex+1}}</view>
         <!-- 左边封面图 -->
         <image class="topitemimage" src="{{topfilmitem.images.large}}"></image>

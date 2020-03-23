@@ -13,7 +13,7 @@ Page({
       rating: {
         average: 5
       },
-      title:'安家',
+      cntitle:'安家',
       genres:["剧情","爱情"]
     }, {
         id: '111',
@@ -23,47 +23,7 @@ Page({
         rating: {
           average: 5
         },
-        title: '安家',
-        genres: ["剧情", "爱情"]
-      }, {
-        id: '111',
-        images: {
-          large: 'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2587877550.webp'
-        },
-        rating: {
-          average: 5
-        },
-        title: '安家',
-        genres: ["剧情", "爱情"]
-      }, {
-        id: '111',
-        images: {
-          large: 'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2587877550.webp'
-        },
-        rating: {
-          average: 5
-        },
-        title: '安家',
-        genres: ["剧情", "爱情"]
-      }, {
-        id: '111',
-        images: {
-          large: 'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2587877550.webp'
-        },
-        rating: {
-          average: 5
-        },
-        title: '安家',
-        genres: ["剧情", "爱情"]
-      }, {
-        id: '111',
-        images: {
-          large: 'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2587877550.webp'
-        },
-        rating: {
-          average: 5
-        },
-        title: '安家',
+        cntitle: '安家',
         genres: ["剧情", "爱情"]
       }],
     more: false
